@@ -1,0 +1,22 @@
+class Solution {
+public:
+    bool isSymmetric(TreeNode* root)
+    {
+         if(root==0)
+         {
+             return true;
+         }
+         return isMirror(root->left,root->right);
+        
+    }
+
+    int isMirror(TreeNode* root1, TreeNode* root2)
+    {
+        if(root1==0 && root2==0) return true;
+
+        if(root1==0 ||root2==0) return false;
+
+        if(root1->val!= root2->val) return false;
+        return isMirror(root1->left,root2->right) && isMirror(root1->right,root2->left);
+    }
+};
