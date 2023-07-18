@@ -1,0 +1,14 @@
+ bool checkTree(TreeNode* root)
+    {
+         if(root==0)
+         return true;
+         if(root->left==0 && root->right) return true;
+         if  (root->left->val+root->right->val == root->val)
+         {
+             return true;
+         }
+         else
+         {
+             return false;
+         }
+    }
