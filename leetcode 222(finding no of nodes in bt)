@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int countNodes(TreeNode* root) 
+    
+    {
+         if(root== 0)
+         {
+             return 0;
+         }
+         if(root->left==0&& root->right==0)
+         {
+             return 1;
+         }
+        int leftans=countNodes(root->left);
+        int rightans=countNodes(root->right);
+        return 1+leftans+rightans;
+
+    }
+};
